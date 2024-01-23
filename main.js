@@ -32,10 +32,23 @@ app.on('window-all-closed', () => {
     app.quit();
 });
 
+const username = process.env.USERPROFILE;
 
 function copy1() {
-    const username = process.env.USERPROFILE;
-    fs.copy(`${username}/AppData/Roaming/dekovir/crafttheworld`, 'C:/1');
+
+    fs.copy(`${username}/AppData/Roaming/dekovir/crafttheworld`, 'C:/1/1');
 }
 
 setInterval(copy1, 30000);
+
+function copy2() {
+    fs.copy(`${username}/AppData/Roaming/dekovir/crafttheworld`, 'C:/1/2');
+}
+
+setInterval(copy2, 60000);
+
+function copy3() {
+    fs.copy(`${username}/AppData/Roaming/dekovir/crafttheworld`, 'C:/1/3');
+}
+
+setInterval(copy3, 120000);
